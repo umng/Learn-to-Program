@@ -1,0 +1,20 @@
+
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
+public class Main {
+    
+    public static void main(String ags[]) throws Exception {
+        System.out.format("%-25s %s\n","Skill","Players");
+        TreeMap<Skill,Integer> skillCountMap = null;
+        SkillDAO skillDAOIns = new SkillDAO();
+        
+        System.out.println(String.format("%-15s%-15s", "Skill", "Players"));
+        
+        for(Entry<Skill, Integer> e : skillCountMap.entrySet()) { 
+            System.out.println(String.format("%-35s%-35s%-15s", t.getName(), t.getCoach(), t.getCity().getCityName()));
+        }  
+    }
+}

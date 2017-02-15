@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Histogram.java&apos; to &apos;TreeMap - Letter Frequency/src/(default package)&apos;&#x0A;- Original project: &apos;HashMap - Scores to Bin&apos;&#x0A;- Destination element: &apos;TreeMap - Letter Frequency/src/(default package)&apos;&#x0A;- Original element: &apos;Histogram.java&apos;" description="Copy compilation unit" destination="=TreeMap - Letter Frequency/src&lt;" element1="/src&lt;{Histogram.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1486108474082" units="1" version="1.0"/>
+</session>

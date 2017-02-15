@@ -1,0 +1,3 @@
+import java.util.HashSet;
+
+public class Main { public static void main(String a[]){ HashSet<E> hs = new HashSet(); hs.add("first"); hs.add("second"); hs.add("third"); hs.add("apple"); hs.add("rat"); System.out.println(hs); HashSet subSet = new HashSet(); subSet.add("rat"); subSet.add("second"); subSet.add("first"); hs.retainAll(subSet); System.out.println("HashSet content:"); System.out.println(hs); } }

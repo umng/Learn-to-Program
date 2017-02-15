@@ -1,0 +1,54 @@
+HW_Question
+
+Q1 : create a doubly linked list with 5 nodes. (Both Cases considered - head is NULL & ~NULL)
+
+Q2 : given a linked list, detect whether it has a loop or not? [using Floyd's Algo.]
+	{it has 4 ways to solve it but most optimized is Floyd's Algo.}
+
+Q3 : reverse a linked list?
+	1| -> 2| -> 3| -> NULL
+	OUTPUT = 3 2 1
+
+Q4 : check whether length of linked list is even or odd?
+
+Q5 : print a singly linked list from the end.
+
+Q6 : swap node of a linked list without swapping data.
+
+Q7 : merge sort for linked list.
+
+Q8 : circular linked list - insert and delete a node.
+
+Q9 : doubly linked list - insert and delete a node.
+
+Q10 : reverse doubly linked list.
+
+Q11 : stack - with linked list
+
+tim ruffguard- design & analysis of algorithms on cousera.
+
+Q12 : find min./max. from stack with complexity O(n);
+
+use stl library in c++ always
+
+sagaranand.com
+
+http://hr.gs/talent
+
+___________________________________________________
+STL - Standard Template Library
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Containers - Vector<int>, Stack<>, Queue<>, List<>, etc.
+					e.g. : Vector v<int> = new Vector<int>;
+					
+Algorthims - sort(), search() etc. they r optimized to run best with lowest complexity
+
+Iterators - for(i...10)
+				{
+				}
+__________________________________________________
+		
+		
+http://pranavr93.blogsopt.in/2013/08/june-long-dessert-wizard.html		
+
+youtube - Derek Banas (Learn Perl).

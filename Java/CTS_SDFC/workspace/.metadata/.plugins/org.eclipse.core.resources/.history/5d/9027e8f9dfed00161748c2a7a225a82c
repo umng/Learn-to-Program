@@ -1,0 +1,18 @@
+
+public class TeamThread extends Thread {
+	Main threadMain;
+	Integer numberOfPlayers;
+	
+	public TeamThread(Main threadMain, Integer numberOfPlayers) {
+		super();
+		this.threadMain = threadMain;
+		this.numberOfPlayers = numberOfPlayers;
+	}
+	
+	@Override
+	synchronized public void run() {
+		try {
+			wait();
+		} catch (InterruptedException e) {}
+	}
+}

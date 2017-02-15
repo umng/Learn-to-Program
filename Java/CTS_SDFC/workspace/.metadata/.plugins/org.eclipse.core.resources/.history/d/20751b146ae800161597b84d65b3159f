@@ -1,0 +1,11 @@
+
+public class RevenueComparator {
+
+	@Override
+	public int compare(Revenue x, Revenue y) {
+		if(x.getAmount() > y.getAmount())
+			return x.getAmount();
+		else
+			return y.getAmount();
+	}
+}

@@ -1,0 +1,11 @@
+
+public class Revenue {
+	String category;
+	int amount;
+	
+	public Revenue(String category, int amount) {
+		super();
+		this.category = category;
+		this.amount = amount;
+	}
+}

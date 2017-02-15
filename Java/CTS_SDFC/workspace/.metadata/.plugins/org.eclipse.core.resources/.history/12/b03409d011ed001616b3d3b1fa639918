@@ -1,0 +1,15 @@
+import java.io.BufferedReader;
+import java.util.ArrayList;
+
+public class FileUtility {
+	ArrayList<Player> readFileData(BufferedReader br) {
+		ArrayList<String> search = new ArrayList<>();
+		while((i = br.read()) != -1) {
+			s += (char)i;
+		}
+	}
+	
+	void writeDataToFile(ArrayList<Player> playerList) {
+		
+	}
+}

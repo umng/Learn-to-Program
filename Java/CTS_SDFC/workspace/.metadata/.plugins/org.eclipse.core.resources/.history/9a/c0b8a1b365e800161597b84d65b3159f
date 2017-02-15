@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String category;
+		int amount;
+		String next = null;
+		Scanner sc = new Scanner(System.in);
+		
+		TreeSet<Revenue> revenues = new TreeSet<>();
+		
+		do {
+			System.out.println("Enter revenue category");
+			System.out.println("Enter revenue amount");
+			Revenue r = new Revenue(category, amount);
+			System.out.println("Do you want to continue(yes/no):");
+		} while(next.equals("yes"));
+	}
+
+}

@@ -1,0 +1,35 @@
+import java.util.Comparator;
+
+public class Revenue implements Comparator<Revennue> {
+	String revenueCategory;
+	int amount;
+	
+	public Revenue(String revenueCategory, int amount) {
+		super();
+		this.revenueCategory = revenueCategory;
+		this.amount = amount;
+	}
+
+	public String getRevenueCategory() {
+		return revenueCategory;
+	}
+
+	public void setRevenueCategory(String revenueCategory) {
+		this.revenueCategory = revenueCategory;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	
+	int compareTo(Revenue x, Revenue y) {
+		if(x.getAmount() > y.getAmount())
+			return x.getAmount();
+		else
+			return y.getAmount();
+	}
+}

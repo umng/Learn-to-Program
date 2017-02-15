@@ -1,0 +1,14 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+public class FileUtility {
+	ArrayList<Player> readFileData(BufferedReader br) {
+		ArrayList<String> search = new ArrayList<>();
+		BufferedReader br = new BufferedReader(new FileReader("team.txt"));
+	}
+	
+	void writeDataToFile(ArrayList<Player> playerList) {
+		
+	}
+}

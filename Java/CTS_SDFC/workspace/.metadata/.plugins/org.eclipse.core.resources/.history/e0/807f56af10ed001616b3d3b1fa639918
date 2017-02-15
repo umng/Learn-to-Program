@@ -1,0 +1,8 @@
+
+public class Player {
+	int capNumber;
+	String playerName;
+	String skill;
+	String country;
+	
+}

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		int i = 0, n;
+		Scanner sc = new Scanner(System.in);
+
+		n = Integer.parseInt(sc.nextLine());
+		TitleCaseThread[] tct = new TitleCaseThread[n];
+		Thread[] t = new Thread[n];
+		
+		while(i < n) {
+			tct[i] = new TitleCaseThread(sc.nextLine());
+			t[i] = new Thread(tct[i]);
+			t[i].start();
+			i++;
+		}
+		sc.close();
+		
+		try{  
+			for(Thread th : t) {
+				th.join();
+			}  
+		}catch(Exception e){
+		}  
+		
+		System.out.println("Ordered Score List");
+		for(SortScore ss : ssList) {
+			System.out.println("Match : " + ss.getMatchType());
+			for(int s : ss.getScores()) {
+				System.out.println(s);
+			}
+		}
+	}
+
+}

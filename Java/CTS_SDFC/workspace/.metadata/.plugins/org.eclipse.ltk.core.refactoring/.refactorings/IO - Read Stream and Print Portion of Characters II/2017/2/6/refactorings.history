@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;IO - Read Stream and Print Portion of Characters II/outcome.txt&apos; to &apos;matchsummary.txt&apos;" description="Rename resource &apos;outcome.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="outcome.txt" name="matchsummary.txt" stamp="1486463738157" updateReferences="true"/>
+</session>

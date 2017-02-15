@@ -1,0 +1,38 @@
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String revenueCategory;
+		int amount;
+		String next = null;
+		int total = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		TreeSet<Revenue> revenues = new TreeSet<>(new Comparator<T>() {
+		};
+		
+		do {
+			System.out.println("Enter revenue category");
+			revenueCategory = sc.nextLine();
+			System.out.println("Enter revenue amount");
+			amount = sc.nextInt();
+			sc.nextLine();
+			revenues.add(new Revenue(revenueCategory, amount));
+			System.out.println("Do you want to continue(yes/no):");
+			next = sc.nextLine();
+		} while(next.equals("yes"));
+		sc.close();
+		
+		System.out.println("Top spending categories");
+		System.out.printf("%-15s%-15s\n","Category", "Amount");
+		for(Revenue r : revenues) {
+			System.out.printf("%-15s%-15s\n",r.getRevenueCategory(), r.getAmount());
+			total += r.getAmount();
+		}
+		System.out.printf("Total amount earned: %d", total);
+	}
+
+}

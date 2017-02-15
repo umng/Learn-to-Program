@@ -1,0 +1,18 @@
+
+public class PlayerThread extends Thread {
+	Main threadMain;
+	Integer numberOfPlayers;
+	
+	public PlayerThread(Main threadMain, Integer numberOfPlayers) {
+		super();
+		this.threadMain = threadMain;
+		this.numberOfPlayers = numberOfPlayers;
+	}
+	
+	@Override
+	synchronized public void run() {
+			System.out.println("Player Thread " + i);
+		}
+		notifyAll();
+	}
+}

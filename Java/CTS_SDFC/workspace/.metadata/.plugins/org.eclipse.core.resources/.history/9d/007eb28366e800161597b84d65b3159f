@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String revenueCategory;
+		int amount;
+		String next = null;
+		Scanner sc = new Scanner(System.in);
+		
+		TreeSet<Revenue> revenues = new TreeSet<>();
+		
+		do {
+			System.out.println("Enter revenue category");
+			revenueCategory = sc.nextLine();
+			System.out.println("Enter revenue amount");
+			amount = sc.nextInt();
+			revenues.add(new Revenue(revenueCategory, amount));
+			System.out.println("Do you want to continue(yes/no):");
+		} while(next.equals("yes"));
+		
+		System.out.println("Top spending categories");
+		System.out.println(String.format("%-15s%-15s","Category", "Amount"));
+		for(Revenue r : revenues) {
+			System.out.println(String.format("%-15s%-15s","Category", "Amount"));
+		}
+	}
+
+}
