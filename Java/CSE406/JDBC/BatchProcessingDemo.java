@@ -11,6 +11,7 @@ class BatchProcessingDemo{
       int x = 10;
       while(x<100)
         stmt.addBatch("insert into t1 values(" + (x++) + ");");
+        stmt.addBatch("insert into t1 values(" + (x++) + ");");
       stmt.executeBatch();
 
       con.commit();
