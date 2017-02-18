@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Player Application form</title>
+	<style type="text/css">
+		.heading {
+			font-style: italic;
+			color: #708090;
+			background-color: #87CEEB;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<th colspan="2">	
+				<h2>Player Details</h2>
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="heading">Name*</td>
+				<td>
+					<input type="text" id="name" placeholder="Enter your name" autofocus>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">DOB*</td>
+				<td>
+					<input type="text" id="dob" placeholder="DD/MM/YYYY"  pattern="\d{1,2}/\d{1,2}/\d{4}" >
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Age*</td>
+				<td>
+					<input type="text" id="age" placeholder="Enter your age">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Email Id*</td>
+				<td>
+					<input type="text" id="email" placeholder="abc12@xyz.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Country*</td>
+				<td>
+					<select id="country">
+						<option>India</option>
+						<option>Pokemon</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Skill*</td>
+				<td>
+					<input type="checkbox" id="skill">Batting
+					<input type="checkbox" id="skill">Bowling
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Bat Style</td>
+				<td>
+					<input type="radio" id="bat" name="bat">Right Handed
+					<input type="radio" id="bat" name="bat">Left Handed
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Bowl Style</td>
+				<td>
+					<input type="radio" id="bowl" name="bowl" />Right Handed
+					<input type="radio" id="bowl" name="bowl" />Left Handed
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Matches*</td>
+				<td>
+					<input type="text" id="match" placeholder="matches Played" />
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Runs*</td>
+				<td>
+					<input type="text" id="run" placeholder="Total runs scored">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Wickets*</td>
+				<td>
+					<input type="text" id="wicket" placeholder="Wickets">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading">Achievements</td>
+				<td>
+					<textarea type="text" id="achieve" placeholder="Total runs scored">
+					</textarea>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					<input type="submit" name="" id="submitid" text="Submit" />
+				</td>
+				<td>
+					<input type="reset" name="Reset" id="reset" text="Reset" />
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
