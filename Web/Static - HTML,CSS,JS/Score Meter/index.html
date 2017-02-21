@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Score Meter</title>
+</head>
+<body>
+	<center>
+		<h2>Score Meter</h2>
+		<h4>(Enter the runs)</h4>
+		<p>Enter the score details:</p>
+		<input type="text" name="score" id="score" value="30,10,5,3,1">
+		<br>
+		<br>
+		<button type="button" id="submitId" onclick="showTotal()" >Get Score</button>
+		<br>
+		<br>
+		<br>
+		Total Score
+		<br>
+		<div id="total"></div>
+	</center>
+
+	<script type="text/javascript">
+	    function showTotal() {
+	    	var score = document.getElementById('score').value;
+
+	    	var scores = score.split(",");
+
+	    	var total = 0;
+	    	total += Number(scores[0]) * 1;
+	    	total += Number(scores[1]) * 2;
+	    	total += Number(scores[2]) * 3;
+	    	total += Number(scores[3]) * 4;
+	    	total += Number(scores[4]) * 6;
+
+	    	
+	    	document.getElementById("total").innerHTML = total;
+	    }
+	</script>
+</body>
+</html>
