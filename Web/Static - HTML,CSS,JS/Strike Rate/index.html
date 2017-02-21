@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Strike Rate</title>
+</head>
+<body>
+	<center>
+		<h3>Strike Rate</h3>
+		<br>
+		Player Name :<input type="text" name="name" id="name" />
+		<br>
+		Runs Scored :<input type="text" name="run" id="run" />
+		<br>
+		Ball Faced :<input type="text" name="ball" id="ball" />
+		<br>
+		<br>
+		<button id="Click" type="button" onclick="showRate()">Click</button>
+		<br>
+		<br>
+		<br>
+		Strike Rate :
+		<br>
+		<div id="StrikeRate"></div>
+	</center>
+
+	<script type="text/javascript">
+	    function showRate() {
+	    	var run = Number(document.getElementById('run').value);
+	    	var ball = Number(document.getElementById('ball').value);
+
+	    	var rate = run*100/ball;
+
+	    	document.getElementById("StrikeRate").innerHTML = rate;
+	    }
+	</script>
+</body>
+</html>
