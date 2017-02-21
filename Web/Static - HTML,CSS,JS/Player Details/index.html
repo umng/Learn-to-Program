@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Player Details</title>
+</head>
+<body>
+	<center>
+		<h3>Input CSV</h3>
+		<br>
+		<br>
+		<textarea id="csv" name="csv"></textarea>
+		<br>
+		<br>
+		<button id="convert" type="button" onclick="showTable()">Convert</button>
+		<br>
+		<br>
+		<br>
+		<table id="team" border="1">
+			
+		</table>
+	</center>
+
+	<script type="text/javascript">
+	    function showTable() {
+	    	var csv = document.getElementById('csv').value;
+
+	    	var rows = csv.split("\n");
+
+	    	var table = "";
+
+	    	var head = rows[0].split(",");
+	    	table += "<tbody><tr>"
+	    	for (var i = 0; i < head.length; i++) {
+	    		table += "<th>" + head[i] + "</th>";
+	    	}
+	    	table += "</tr>";
+
+	    	for (var i = 1; i < rows.length; i++) {
+	    		table += "<tr>";
+	    		var row = rows[i].split(",");
+	    		for (var j = 0; j < row.length; j++) {
+	    			table += "<td>" + row[j] + "</td>";
+	    		}
+	    		table += "</tr>";
+	    	}
+	    	table += "</tbody>";
+
+	    	document.getElementById("team").innerHTML = table;
+	    }
+	</script>
+</body>
+</html>
