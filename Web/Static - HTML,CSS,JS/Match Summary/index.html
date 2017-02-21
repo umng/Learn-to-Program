@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Match Summary</title>
+</head>
+<body>
+	<form>
+		<table style="background-color: #f0e68c;">
+	        <thead>
+	            <th><h2>Match Summary</h2></th>
+	        </thead>
+			<tbody>
+				<tr>
+					<td><p id="error" style="color: red;"></p></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Team A *</td>
+					<td>
+						<input type="text" id="teamA" name="teamA" placeholder="Team A">
+					</td>
+				</tr>
+				<tr>
+					<td>Team B *</td>
+					<td>
+						<input type="text" id="teamB" name="teamB"  placeholder="Team B">
+					</td>
+				</tr>
+				<tr>
+					<td>Date*</td>
+					<td>
+						<input type="text" id="date" name="date"  placeholder="DD/MM/YYYY">
+					</td>
+				</tr>
+				<tr>
+					<td>Time *</td>
+					<td>
+						<input type="text" id="time" name="time"  placeholder="HH:MM:SS">
+					</td>
+				</tr>
+				<tr>
+					<td>Team A Score *</td>
+					<td>
+						<input type="text" id="scoreA" name="scoreA"  placeholder="Runs/Wkts">
+					</td>
+				</tr>
+				<tr>
+					<td>Team B Score *</td>
+					<td>
+						<input type="text" id="scoreB" name="scoreB" placeholder="Runs/Wkts">
+					</td>
+				</tr>
+				<tr>
+					<td>
+	                    <button type="button" id="save" onclick="matchSummary()">Save</button>
+	                </td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Winning Team :</td>
+					<td>
+						<p id="win"></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+
+    <script>
+	    function matchSummary() {
+	    	var teamA = document.getElementById('teamA').value;
+	    	var teamB = document.getElementById('teamB').value;
+	    	var date = document.getElementById('date').value;
+	    	var time = document.getElementById('time').value;
+	    	var scoreA = document.getElementById('scoreA').value;
+	    	var scoreB = document.getElementById('scoreB').value;
+
+	    	if (validate(teamA, teamB, date, time, scoreA, scoreB)) {
+	    		var a = Number(scoreA.substring(0, scoreA.indexOf("/")));
+	    		var b = Number(scoreB.substring(0, scoreB.indexOf("/")));
+	    		if(Math.max(a,b) == a)
+		    		document.getElementById("win").innerHTML = teamA;
+	    		else if(Math.max(a,b) == b)
+		    		document.getElementById("win").innerHTML = teamB;
+		    	else
+		    		document.getElementById("win").innerHTML = "";
+	    	}
+	    }
+
+	    function validate(teamA, teamB, date, time, scoreA, scoreB) {
+	    	var valid = true;	
+	    	var errorText = "";
+	    	if(!teamA || !(/^[a-zA-Z- ]*$/.test(teamA))) {
+	    		errorText += "Invalid TeamA Name<br>";
+	    		valid = false;
+	    	}
+	    	if(!teamB || !(/^[a-zA-Z- ]*$/.test(teamB))) {
+	    		errorText += "Invalid TeamB Name<br>";
+	    		valid = false;
+	    	}
+	    	if(!date || !checkDate(date)) {
+	    		errorText += "Invalid Date<br>";
+	    		valid = false;
+	    	}
+	    	if(!time || !checkTime(time)) {
+	    		errorText += "Invalid Time<br>";
+	    		valid = false;
+	    	}
+	    	if(!scoreA || !checkScore(scoreA)) {
+	    		errorText += "Invalid TeamA Score<br>";
+	    		valid = false;
+	    	}
+	    	if(!scoreB || !checkScore(scoreB)) {
+	    		errorText += "Invalid TeamB Score<br>";
+	    		valid = false;
+	    	}
+
+
+	    	document.getElementById("error").innerHTML = errorText;
+	    	return valid;
+	    }
+
+	    function checkDate(date) {
+	    	var valid = true;
+	    	var dd = date.substring(0, date.indexOf("/"));
+	    	date = date.substring(date.indexOf("/") + 1);
+	    	var mm = date.substring(0, date.indexOf("/"));
+	    	date = date.substring(date.indexOf("/") + 1);
+	    	var yy = date;
+
+	    	if(!(dd.length == 2) || !(mm.length == 2) || !(yy.length == 4)
+	    		|| !(Number(dd) >= 1 && Number(dd) <= 31) 
+	    		|| !(Number(mm) >= 1 && Number(mm) <= 12) 
+	    		|| !(Number(yy) >= 1 && Number(yy) <= 2100) 
+	    		|| isNaN(dd) || isNaN(mm) || isNaN(yy))
+	    		valid = false;
+
+	    	return valid;
+	    }
+
+	    function checkTime(time) {
+	    	var valid = true;
+	    	var hh = time.substring(0, time.indexOf(":"));
+	    	time = time.substring(time.indexOf(":") + 1);
+	    	var mm = time.substring(0, time.indexOf(":"));
+	    	time = time.substring(time.indexOf(":") + 1);
+	    	var ss = time;
+
+	    	if(!(hh.length == 2) || !(mm.length == 2) || !(ss.length == 2)
+	    		|| !(Number(hh) >= 0 && Number(hh) <= 23) 
+	    		|| !(Number(mm) >= 0 && Number(mm) <= 59)
+	    		|| !(Number(ss) >= 0 && Number(ss) <= 59) 
+	    		|| isNaN(hh) || isNaN(mm) || isNaN(ss))
+	    		valid = false;
+
+	    	return valid;
+	    }
+
+	    function checkScore(score) {
+	    	var valid = true;
+	    	var runs = score.substring(0, score.indexOf("/"));
+	    	var wkts = score.substring(score.indexOf("/") + 1);
+
+	    	if(!(runs.length == 2 || runs.length == 3) || !(wkts.length == 1 || wkts.length == 2) || !(Number(wkts) >= 0 && Number(wkts) <= 10) || isNaN(runs) || isNaN(wkts))
+	    		valid = false;
+	    	return valid;
+	    }
+    </script>
+</body>
+</html>
