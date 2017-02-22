@@ -17,47 +17,33 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Gujarat Lions</td>
-					<td>8.5</td>
-					<td>90</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>Mumbai Indians</td>
-					<td>6.8</td>
-					<td>70</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>Raising Pune Supergiants</td>
-					<td>2.5</td>
-					<td>30</td>
-					<td>6</td>
-				</tr>
-				<tr>
-					<td>Sunrisers Hyderabad</td>
-					<td>5.5</td>
-					<td>58</td>
-					<td>5</td>
-				</tr>
-				<tr>
-					<td>Delhi Daredevils</td>
-					<td>9.7</td>
-					<td>98</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>Kolkata Knight Riders</td>
-					<td>7.5</td>
-					<td>85</td>
-					<td>3</td>
-				</tr>
-			</tbody>
 		</table>
 	</center>
 
 	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'GET',
+            	url: 'team.json', 
+            	data: { get_param: 'value' }, 
+            	dataType:'json',
+				success : function(jsonData) {
+					 var tableData = "";
+					 $.each(jsonData.team, function(index, team) {
+					 	tableData += "<tr>"
+					 	tableData += "<td>" + team.team + "</td>";
+					 	tableData += "<td>" + team.runrate + "</td>";
+					 	tableData += "<td>" + team.points + "</td>";
+					 	tableData += "<td>" + team.rank + "</td>";
+					 	tableData += "</tr>"
+					 });
+					 tableData+="</tbody>";
+
+					$("#team").append(tableData);
+				}
+			});
+		});
+
 		var table = $('table');
     
 	    $('#team_points')
