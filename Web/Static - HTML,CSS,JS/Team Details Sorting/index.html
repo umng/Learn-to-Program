@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Details Sorting</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/padolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js"></script>
+</head>
+<body>
+	<center>
+		<table id="team" border="1">
+			<thead>
+				<tr>
+					<th>Team</th>
+					<th>RunRate</th>
+					<th id="team_points">Points</th>
+					<th>Rank</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Gujarat Lions</td>
+					<td>8.5</td>
+					<td>90</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Mumbai Indians</td>
+					<td>6.8</td>
+					<td>70</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>Raising Pune Supergiants</td>
+					<td>2.5</td>
+					<td>30</td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td>Sunrisers Hyderabad</td>
+					<td>5.5</td>
+					<td>58</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>Delhi Daredevils</td>
+					<td>9.7</td>
+					<td>98</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Kolkata Knight Riders</td>
+					<td>7.5</td>
+					<td>85</td>
+					<td>3</td>
+				</tr>
+			</tbody>
+		</table>
+	</center>
+
+	<script type="text/javascript">
+		var table = $('table');
+    
+	    $('#team_points')
+	        .wrapInner('<span title="sort this column"/>')
+	        .each(function(){
+	            
+	            var th = $(this),
+	                thIndex = th.index(),
+	                inverse = false;
+	            
+	            th.click(function(){
+	                
+	                table.find('td').filter(function(){
+	                    
+	                    return $(this).index() === thIndex;
+	                    
+	                }).sortElements(function(a, b){
+	                    
+	                    return $.text([a]) > $.text([b]) ?
+	                        inverse ? -1 : 1
+	                        : inverse ? 1 : -1;
+	                    
+	                }, function(){
+	                    
+	                    // parentNode is the element we want to move
+	                    return this.parentNode; 
+	                    
+	                });
+	                
+	                inverse = !inverse;
+	                    
+	            });
+	                
+	        });
+	</script>
+</body>
+</html>
