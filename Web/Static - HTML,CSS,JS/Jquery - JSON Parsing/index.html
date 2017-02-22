@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery - JSON Parsing</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		<button type="button" id="getdetail">Get Team Details</button>
+		<br>
+		<br>
+		<table id="teamdetail" border="1">
+			<tbody>
+				<tr>
+					<th colspan="3">Playoff Team Schedule</th>
+				</tr>
+				<tr>
+					<th>Date</th>
+					<th>Venue</th>
+					<th>Match Details</th>
+				</tr>
+				<tr>
+					<th>24/07/2016</th>
+					<th>Bengaluru</th>
+					<th>Qualifier 1 – Gujarat Lions vs Royal Challengers Bangalore</th>
+				</tr>
+		</table>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#getdetail").click(function() {
+				$.ajax({
+					type: 'GET',
+                	url: 'teamdetail.json', 
+                	data: { get_param: 'value' }, 
+                	dataType:'json',
+					success : function(jsonData) {
+						 var tableData = "";
+						 $.each(jsonData.teamList, function(index, team) {
+						 	tableData += "<tr>"
+						 	tableData += "<td>" + team.date + "</td>";
+						 	tableData += "<td>" + team.venue + "</td>";
+						 	tableData += "<td>" + team.matchdetails + "</td>";
+						 	tableData += "</tr>"
+						 });
+						 tableData+="</tbody>";
+
+						$("#teamdetail").append(tableData);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
