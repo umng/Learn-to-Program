@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Player Details-Json</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		<table>
+			<thead>
+				<th colspan="2">	
+					<h2>Player Details</h2>
+				</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>First Name:</td>
+					<td>
+						<input type="text" id="firstname" name="firstname">
+					</td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td>
+						<input type="text" id="lastname" name="lastname">
+					</td>
+				</tr>
+				<tr>
+					<td>DOB:</td>
+					<td>
+						<input type="text" id="dob" name="dob">
+					</td>
+				</tr>
+				<tr>
+					<td>Email Id</td>
+					<td>
+						<input type="text" id="email" name="email">
+					</td>
+				</tr>
+				<tr>
+					<td class="heading">Batting Style</td>
+					<td>
+						<input type="radio" id="bat" name="bat" value="Right Handed">Right Handed
+						<input type="radio" id="bat" name="bat" value="Left Handed">Left Handed
+					</td>
+				</tr>
+				<tr>
+					<td class="heading">Bowling Style</td>
+					<td>
+						<input type="radio" id="bowl" name="bowl" value="Right Handed" />Right Handed
+						<input type="radio" id="bowl" name="bowl" value="Left Handed" />Left Handed
+					</td>
+				</tr>
+				<tr>
+					<td>Matches</td>
+					<td>
+						<input type="text" id="matches" name="matches" />
+					</td>
+				</tr>
+				<tr>
+					<td>Runs</td>
+					<td>
+						<input type="text" id="runs" name="runs">
+					</td>
+				</tr>
+				<tr>
+					<td>Wickets</td>
+					<td>
+						<input type="text" id="wickets" name="wickets">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<button type="submit" id="json">Form Json</button>
+		<br>
+		<br>
+		<textarea id="data"></textarea>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#json").click(function() {
+				var jData = "{";
+				jData += '\"firstname\":\"' + $("#firstname").val() + '\"';
+				jData += ',';
+				jData += '\"lastname\":\"' + $("#lastname").val() + '\"';
+				jData += ',';
+				jData += '\"dob\":\"' + $("#dob").val() + '\"';
+				jData += ',';
+				jData += '\"email\":\"' + $("#email").val() + '\"';
+				jData += ',';
+				jData += '\"bat\":\"' + $("input[name='bat']:checked").val() + '\"';
+				jData += ',';
+				jData += '\"bowl\":\"' + $("input[name='bowl']:checked").val() + '\"';
+				jData += ',';
+				jData += '\"matches\":\"' + $("#matches").val() + '\"';
+				jData += ',';
+				jData += '\"runs\":\"' + $("#runs").val() + '\"';
+				jData += ',';
+				jData += '\"wickets\":\"' + $("#wickets").val() + '\"';
+				jData += "}";
+
+				$("#data").append(jData);
+			});
+		});
+	</script>
+</body>
+</html>
