@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IPL Registration Form</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		<table>
+			<tr>
+				<th colspan="2">IPL Registration Form</th>
+			</tr>
+			<tr>
+				<td>Team Name</td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td>Team Email Id</td>
+				<td><input type="text" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td>Team Owner</td>
+				<td><input type="text" name="owner" id="owner"></td>
+			</tr>
+			<tr>
+				<td>Coach Name</td>
+				<td><input type="text" name="coach" id="coach"></td>
+			</tr>
+			<tr>
+				<td>Team Captain</td>
+				<td><input type="text" name="captain" id="captain"></td>
+			</tr>
+			<tr>
+				<td>Sponser</td>
+				<td><input type="text" name="sponser" id="sponser"></td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td><input type="text" name="city" id="city"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button type="button" id="submit">Submit</button></td>
+			</tr>
+		</table>
+		<br>
+		<div id="display"></div>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#submit").click(function() {
+				var showData = "";
+				showData += "<h3>Registration Detail</h3>";
+				showData += "<br>Team Name : " + $("#name").val();
+				showData += "<br>Team EmailId : " + $("#email").val();
+				showData += "<br>Team Owner : " + $("#owner").val();
+				showData += "<br>Coach Name : " + $("#coach").val();
+				showData += "<br>Team Captain : " + $("#captain").val();
+				showData += "<br>Sponsers : " + $("#sponser").val();
+				showData += "<br>City : " + $("#city").val();
+
+				$("#display").html(showData);
+			})
+		})
+	</script>
+</body>
+</html>
