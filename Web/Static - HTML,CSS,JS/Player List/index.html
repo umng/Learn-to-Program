@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player List</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		<h2>Player List</h2>
+		<br>
+		<input type="text" name="name" id="name" placeholder="Name">
+		<input type="text" name="matches" id="matches" placeholder="Matches">
+		<input type="text" name="innings" id="innings" placeholder="Innings">
+		<input type="text" name="runs" id="runs" placeholder="Runs">
+		<button type="button" name="add" id="add">Add Player</button>
+		<br>
+		<br>
+		<table id="list" border="1">
+			<tbody>
+				<tr id="head">
+					<th>Select</th>
+					<th>Name</th>
+					<th>Matches</th>
+					<th>Innings</th>
+					<th>Runs</th>
+				</tr>
+				<tr id="0">
+					<td><input type="checkbox" id="select" value="0" /></td>
+					<td>V Kohli(RCB)</td>
+					<td>16</td>
+					<td>16</td>
+					<td>973</td>
+				</tr>
+				<input type="hidden" id="eot" value="0">
+			</tbody>
+		</table>
+		<br>
+		<button type="button" name="delete" id="delete">Remove Player</button>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#add").click(function() {
+				var n = $("#eot").val();
+				n++;
+				var row;
+				row += "<tr id = \"" + n + "\">"
+					+ "<td><input type=\"checkbox\" id=\"select\" value=\"" + n + "\" /></td>"
+					+ "<td>" + $("#name").val() + "</td>"
+					+ "<td>" + $("#matches").val() + "</td>"
+					+ "<td>" + $("#innings").val() + "</td>"
+					+ "<td>" + $("#runs").val() + "</td>"
+					+ "</tr>";
+
+				$("#eot").before(row);
+				$("#eot").val(Number(n));
+			});
+
+			$("#delete").click(function() {
+				$.each($("input[id='select']:checked"), function() {
+					$("#" + $(this).val()).remove();
+				});
+			});
+		});
+	</script>
+</body>
+</html>
