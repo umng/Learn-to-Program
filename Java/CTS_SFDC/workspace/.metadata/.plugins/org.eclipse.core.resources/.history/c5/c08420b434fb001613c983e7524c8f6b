@@ -1,0 +1,40 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class TeamDAO {
+
+	public Team getTeamById(int id) throws ClassNotFoundException, SQLException {
+		
+		Connection con = DBConnection.getConnection();
+		
+		Statement statement = con.createStatement();
+
+		String sql = "select * from team where id=" + id;
+
+		ResultSet result = statement.executeQuery(sql);
+		result.next();
+
+		PlayerBO pbo =new PlayerBO();
+		return new Team(result.getInt("id"), result.getString("name"), result.getString("coach"), pbo.getPlayerById(result.getInt("captain")));
+	}
+
+	public int updateCoachName(Integer id, String coach) throws ClassNotFoundException, SQLException {
+		
+		Connection con = DBConnection.getConnection();
+		
+		Statement statement = con.createStatement();
+
+		String sql = "update team set coach='"+ coach + "' where id=" + id;
+
+		statement.executeUpdate(sql);
+
+		PlayerBO pbo =new PlayerBO();
+		return new Team(result.getInt("id"), result.getString("name"), result.getString("coach"), pbo.getPlayerById(result.getInt("captain")));
+	}
+	
+	
+
+}

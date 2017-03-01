@@ -1,0 +1,104 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Validate
+ */
+@WebServlet("/Validate")
+public class Validate extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public Validate() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String dob = request.getParameter("dob");
+		String runs = request.getParameter("runs");
+		String average = request.getParameter("average");
+		
+		boolean valid = true;
+		
+		String outData = "<html><head><title>Validate Player Details</title></head><body><div id=\"error\">";
+		
+		if(name.equals("")) {
+			outData += "<br>Invalid Name";
+			valid = false;
+		}
+		if(email.equals("") && !validateEmail(email)) {
+			outData += "<br>Invalid Email";
+			valid = false;
+		}
+		if(dob.equals("")) {
+			outData += "<br>Invalid DOB";
+			valid = false;
+		}
+		if(runs.equals("")) {
+			outData += "<br>Invalid runs";
+			valid = false;
+		}
+		if(average.equals("")) {
+			outData += "Invalid Average";
+			valid = false;
+		}
+		
+		if(valid) {
+			outData += "Inserted Successfully !!!";
+		}
+		
+		outData += "</div><a id=home src=\"index.html\"><<Home</a></body>";
+		
+		PrintWriter out = response.getWriter();
+		
+		out.print(outData);
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+	
+	private Pattern pattern;
+	private Matcher matcher;
+	
+	private static final String NAME_PATTERN = "^[A-Za-z0-9 ]*";
+	private static final String EMAIL_PATTERN =
+			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	private static final String DATE_PATTERN = "^[A-Za-z0-9 ]*";
+
+	
+	private boolean validateName(String name) {
+		pattern = Pattern.compile(NAME_PATTERN);
+		matcher = pattern.matcher(name);
+		return matcher.matches();
+	}
+	
+	private boolean validateDate(String date) {
+		pattern = Pattern.compile(DATE_PATTERN);
+		matcher = pattern.matcher(date);
+		return matcher.matches();
+	}
+	
+	private boolean validateEmail(String email) {
+		pattern = Pattern.compile(EMAIL_PATTERN);
+		matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
+
+}

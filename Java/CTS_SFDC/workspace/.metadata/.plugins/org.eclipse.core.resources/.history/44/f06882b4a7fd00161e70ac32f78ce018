@@ -1,0 +1,8 @@
+<div id=logout"></div>
+<h2>Login</h2>
+<br>
+	<form method='get' action='LoginServlet'>
+		<br>Username<input type='text' name='username' />
+		<br>Password<input type='password' name='password' />
+		<br><input type='submit' value='Login' name='login' />
+	</form>

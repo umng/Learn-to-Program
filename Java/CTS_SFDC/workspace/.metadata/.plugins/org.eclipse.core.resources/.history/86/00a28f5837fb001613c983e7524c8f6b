@@ -1,0 +1,42 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PlayerDAO {
+
+	public List<Player> getAllCaptain() throws ClassNotFoundException, SQLException {
+		
+		Connection con = DBConnection.getConnection();
+		
+		Statement statement = con.createStatement();
+
+		String sql = "select p.id, p.name, p.country, p.team_id as team from player p, team t where t.captain=p.id order by name;";
+		ResultSet result = statement.executeQuery(sql);
+		
+		List<Player> captains = new ArrayList<>();
+		TeamBO tbo = new TeamBO();
+		while(result.next()) {
+			captains.add(new Player(result.getInt("id"), result.getString("name"), result.getString("country"), tbo.getTeamById(result.getInt("team_id"))));
+		}
+		
+		return captains;
+
+	}
+
+	public Player getPlayerById(int id) throws ClassNotFoundException, SQLException {
+		Connection con = DBConnection.getConnection();
+		
+		Statement statement = con.createStatement();
+
+		String sql = "select * from player where id=" + id;
+
+		ResultSet result = statement.executeQuery(sql);
+		result.next();
+
+		TeamBO tbo =new TeamBO();
+		return new Player(result.getInt("id"), result.getString("name"), result.getString("country"), tbo.getTeamById(result.getInt("captain")));
+}
+}

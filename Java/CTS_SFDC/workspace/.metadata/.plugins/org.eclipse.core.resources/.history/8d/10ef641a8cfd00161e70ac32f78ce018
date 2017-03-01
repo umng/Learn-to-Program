@@ -1,0 +1,11 @@
+import java.sql.SQLException;
+
+public class PlayerDAO {
+
+	
+	public Player validateLogin(String username,String password) throws SQLException, ClassNotFoundException {
+		
+	}
+}
+
+

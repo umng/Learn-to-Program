@@ -1,0 +1,12 @@
+  
+
+
+
+public class PlayerBO {
+	
+	public Player validateLogin(String username,String password) throws ClassNotFoundException,SQLException {
+		 //fill the code
+	}
+}
+
+

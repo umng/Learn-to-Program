@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Servlet - HTTP SESSION - Player Login and Profile page">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="Servlet_-_HTTP_SESSION_-_Player_Login_and_Profile_page"/>
+        <property name="java-output-path" value="/Servlet - HTTP SESSION - Player Login and Profile page/build/classes"/>
+    </wb-module>
+</project-modules>

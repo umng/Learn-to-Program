@@ -1,0 +1,87 @@
+
+
+import java.io.IOException;
+
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Index
+ */
+@WebServlet("/Index")
+public class Index extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Index() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String outData = "";
+		
+		outData += "<html>"
+				+ "<head>"
+				+ "<title>India Premier League</title>"
+				+ "</head>"
+				+ "<body>"
+				+ "<h2>India Premier League</h2>"
+				+ "Team Details:<br><br>"
+				+ "<table id='team'>"
+				+ "<thead><tr>"
+				+ "<th>Sno</th>"
+				+ "<th>Captain Name</th>"
+				+ "<th>Team name</th>"
+				+ "<th>Country</th>"
+				+ "<th>Coach</th>"
+				+ "<th></th>"
+				+ "</tr></thead>"
+				+ "<tbody>";
+		
+		PlayerBO pbo = new PlayerBO();
+		TeamBO tbo = new TeamBO();
+		List<Player> captains = new ArrayList<>();
+		int i = 0;
+		
+		try {
+			captains = pbo.getAllCaptain();
+		} catch (ClassNotFoundException | SQLException e) {		}
+		
+		for(Player p : captains) {
+			outData += "<tr>"
+					+ "<td>" + (++i) + "</td>"
+					+ "<td>" + p.getName() + "</td>"
+					+ "<td>" + p.getTeam().getName() + "</td>"
+					+ "<td>" + p.getCountry() + "</td>"
+					+ "<td>" + p.getTeam().getCoach() + "</td>"
+					+ "<td><a src='EditServlet?team_id=" + p.getTeam().getId() + "</td>"
+					+ "</tr>";
+		}
+		
+		outData += "</tbody>"
+				+ "</table>"
+				+ "</body>"
+				+ "</html>";
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

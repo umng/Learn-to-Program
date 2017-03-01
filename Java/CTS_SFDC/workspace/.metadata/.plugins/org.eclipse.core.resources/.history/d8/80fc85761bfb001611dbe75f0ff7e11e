@@ -1,0 +1,40 @@
+import java.sql.Connection;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class PlayerDAO {
+
+	public List<Player> obtainAllBatsMan() throws ClassNotFoundException, SQLException {
+
+		Connection con = DBConnection.getConnection();
+		
+		Statement statement = con.createStatement();
+
+		String sql1 = "select id from skill where name=\"Batting\";";
+		ResultSet result = statement.executeQuery(sql1);
+		result.next();
+		
+		Skill skill = new Skill(result.getInt("id"), result.getString("name"));
+		result.close();
+		statement.close();
+		
+		List<Player> players = new ArrayList<>();
+		
+		statement = con.createStatement();
+
+		String sql2 = "select * from player where skill_id=" + 1 + " order by name;";
+		result = statement.executeQuery(sql2);
+		
+		while(result.next()) {
+			players.add(new Player(result.getInt("id"), result.getString("name"), result.getString("country"), skill));
+		}
+		
+		return players;
+	}
+
+}

@@ -1,0 +1,8 @@
+127.0.0.1 - - [01/Mar/2017:10:29:26 +0530] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [01/Mar/2017:10:29:28 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 500 3099
+127.0.0.1 - - [01/Mar/2017:10:50:43 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 200 695
+127.0.0.1 - - [01/Mar/2017:10:51:48 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 200 687
+127.0.0.1 - - [01/Mar/2017:10:53:27 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 200 686
+127.0.0.1 - - [01/Mar/2017:10:53:28 +0530] "GET /Team_Registration/Register?name=&coach= HTTP/1.1" 404 1003
+127.0.0.1 - - [01/Mar/2017:11:18:02 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 500 3099
+127.0.0.1 - - [01/Mar/2017:11:18:02 +0530] "GET /Team_Registration/index.jsp HTTP/1.1" 500 3099

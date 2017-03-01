@@ -1,0 +1,14 @@
+
+
+public class PlayerDAO {
+
+	public List<Player> getAllCaptain() throws ClassNotFoundException, SQLException {
+		// fill the code
+
+	}
+
+	public Player getPlayerById(int id) throws ClassNotFoundException, SQLException {
+		
+		// fill the code
+}
+}

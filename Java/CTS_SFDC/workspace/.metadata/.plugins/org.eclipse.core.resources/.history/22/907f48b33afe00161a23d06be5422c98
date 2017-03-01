@@ -1,0 +1,19 @@
+<%
+%>
+
+<html>
+	<body>
+		<h2>Existing Teams</h2>
+		<br>
+		<table id="teams">
+			<tr>
+				<th>Team</th>
+				<th>Coach</th>
+			</tr>
+			<tr>
+				<th>Team</th>
+				<th>Coach</th>
+			</tr>
+		</table>
+	</body>
+</html>

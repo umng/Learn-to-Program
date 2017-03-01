@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Details Sorting</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/padolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js"></script>
+</head>
+<body>
+	<center>
+		<div id="playerDetails">
+			<table id="playertable" border="1">
+				<thead>
+					<tr>
+						<th>Player Id</th>
+						<th>Name</th>
+						<th>Role</th>
+						<th>Batting Style</th>
+						<th>Bowling Style</th>
+						<th id="score">Score</th>
+					</tr>
+				</thead>
+				<tbody>
+			</table>
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax('player.xml', {
+			    dataType: 'text',
+			    success: function (xml) {
+			        // Parse the xml file and get data
+                    var show = "";
+			        var xmlDoc = $.parseXML(xml),
+			            $xml = $(xmlDoc);
+                    var i = 1;
+			        $xml.find('player').each(function () {
+                    	show += "<tr>";
+			            show += "<td>" + $(this).find("pid").text() + "</td>";
+			            show += "<td>" + $(this).find("name").text() + "</td>";
+			            show += "<td>" + $(this).find("role").text() + "</td>";
+			            show += "<td>" + $(this).find("battingstyle").text() + "</td>";
+			            show += "<td>" + $(this).find("bowlingstyle").text() + "</td>";
+			            show += "<td>" + $(this).find("score").text() + "</td>";
+                        show += "</tr>";
+			        });
+                    show += "</tbody>";
+                    $("#playertable").append(show);
+			    }
+			});
+		});
+
+		var table = $('table');
+
+		var first = true;
+    
+	    $('#score')
+	        .wrapInner('<span title="sort this column"/>')
+	        .each(function(){
+	            
+	            var th = $(this),
+	                thIndex = th.index(),
+	                inverse = false;
+	            
+	            if(first == true) {
+		            th.click(function(){
+		                
+		                table.find('td').filter(function(){
+		                    
+		                    return $(this).index() === thIndex;
+		                    
+		                }).sortElements(function(a, b){
+		                    
+		                    return $.text([a]) > $.text([b]) ?
+		                        inverse ? -1 : 1
+		                        : inverse ? 1 : -1;
+		                    
+		                }, function(){
+		                    
+		                    // parentNode is the element we want to move
+		                    return this.parentNode; 
+		                    
+		                });
+		                
+		                inverse = !inverse;
+		                    
+		            });
+		            flag = false;
+	            }
+	                
+	        });
+	</script>
+</body>
+</html>

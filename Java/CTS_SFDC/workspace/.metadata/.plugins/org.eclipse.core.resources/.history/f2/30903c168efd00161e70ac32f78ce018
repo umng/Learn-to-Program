@@ -1,0 +1,65 @@
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Index
+ */
+public class Index extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Index() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String outData = "";
+		
+		PlayerBO pbo = new PlayerBO();
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		outData += "<html>"
+				+ "<head><title>Login</title></head>"
+				+ "<body>"
+				+ "<h2>Login</h2>";
+		
+		if(username == null & password == null) {
+			pbo.validateLogin(username, password);
+		}
+		
+		
+		if()	
+		outData	+= "<br><br><div id='errorMsg'></div>";
+				
+				
+		outData	+= "<form method='get' action='Index'>"
+				+ "<br>Username<input type='text' name='username' />"
+				+ "<br>Password<input type='text' name='password' />"
+				+ "<input type='submit' name='login' />"
+				+ "</form>"
+				+ "</body>"
+				+ "</html>";
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
+

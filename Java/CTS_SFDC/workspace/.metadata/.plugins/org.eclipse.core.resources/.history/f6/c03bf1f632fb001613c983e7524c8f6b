@@ -1,0 +1,10 @@
+
+public class Team {
+private Integer id;
+private String name;
+private String coach;
+private Player captain;
+
+// fill the code
+
+}

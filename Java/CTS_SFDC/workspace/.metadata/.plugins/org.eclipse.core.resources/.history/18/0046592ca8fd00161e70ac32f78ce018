@@ -1,0 +1,23 @@
+<html>
+<body>
+<h2>Login</h2>
+<form method=" get" action="./LoginServlet">
+<div></div>
+<table>
+<tr>
+<td>Username</td>
+<td><input type="text" name="username"></td>
+</tr>	
+<tr>
+<td>Password</td>
+<td><input type="password" name="password"></td>
+</tr>
+<tr>
+
+<td><input type="submit" name="login" value="Login"></td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

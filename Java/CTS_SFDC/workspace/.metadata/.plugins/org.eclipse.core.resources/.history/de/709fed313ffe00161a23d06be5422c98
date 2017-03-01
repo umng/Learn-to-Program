@@ -1,0 +1,60 @@
+<%@page import="team.City"%>
+<%@page import="team.CityBO"%>
+<%@page import="team.Team"%>
+<%@page import="team.TeamBO"%>
+<%@page import="java.util.List"%>
+<%
+	//List<Team> teams = new TeamBO().obtainAllTeams();
+	//List<City> cities = new CityBO().obtainAllCities();
+%>
+
+<html>
+	<body>
+		<h2>Existing Teams</h2>
+		<br>
+		<table id="teams">
+			<tr>
+				<th>Team</th>
+				<th>Coach</th>
+			</tr>
+			<%
+				//for(Team t: teams) {
+					//out.print("<tr><td>" + t.getName() + "</td><td>" + t.getCoach() + "</td></tr>");
+				//}
+			%>
+		</table>
+		
+		<br>
+		<h3>New Team!!! Register Here...</h3>
+		<br>
+		
+		<form method="get" action="Register">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td>Coach</td>
+					<td><input type="text" name="coach" /></td>
+				</tr>
+				<tr>
+					<td>Home City</td>
+					<td>
+						<select name="city">
+							<%
+								//for(City c: cities) {
+									//out.print("<option>" + c.getName() + "</option>");
+								//}
+							%>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Register</td>
+					<td><input type="submit" name="register" value="Register" /></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

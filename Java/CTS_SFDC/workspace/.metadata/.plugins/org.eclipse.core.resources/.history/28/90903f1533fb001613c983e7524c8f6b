@@ -1,0 +1,15 @@
+import java.sql.SQLException;
+
+
+public class TeamBO {
+
+	TeamDAO tdo = new TeamDAO();
+	public Team getTeamById(int id) throws ClassNotFoundException, SQLException {
+		
+	}
+
+	public int updateCoachName(Integer id, String coach) throws ClassNotFoundException, SQLException {
+		// fill the code
+	}
+
+}

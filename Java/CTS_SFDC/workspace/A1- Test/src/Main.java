@@ -1,7 +1,4 @@
-import java.util.*; class Main { 
-	public static void main(String args[]) { 
-		List<Integer> list = new ArrayList<Integer>(); 
-		ListIterator a = list.listIterator(); 
-		if(a.previousIndex()!= -1) 
-			while(a.hasNext()) System.out.print(a.next() + " "); 
-		else System.out.print("EMPTY"); } }
+class Test1 { public int value; public int hashCode() { return 42; } } class Test2 { public int value; public int hashcode() { return (int)(value^5); } }
+class Main { public static void main(String args[]) { 
+	
+} }

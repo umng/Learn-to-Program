@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Player Feedback Form</title>
+	</head>
+	<body>
+		Player Name: <input type="text" name="name" />
+		<br>
+		Bowling 
+		<input type="radio" id="bowling" name="bowling" value="Excellent" />Excellent
+		<input type="radio" id="bowling" name="bowling" value="Good" />Good
+		<input type="radio" id="bowling" name="bowling" value="Average" />Average
+		<input type="radio" id="bowling" name="bowling" value="Not Bad" />Not Bad
+		<input type="radio" id="bowling" name="bowling" value="Poor" />Poor
+		<br>
+		Batting 
+		<input type="radio" id="batting" name="batting" value="Excellent" />Excellent
+		<input type="radio" id="batting" name="batting" value="Good" />Good
+		<input type="radio" id="batting" name="batting" value="Average" />Average
+		<input type="radio" id="batting" name="batting" value="Not Bad" />Not Bad
+		<input type="radio" id="batting" name="batting" value="Poor" />Poor
+		<br>
+		Fielding 
+		<input type="radio" id="fielding" name="fielding" value="Excellent" />Excellent
+		<input type="radio" id="fielding" name="fielding" value="Good" />Good
+		<input type="radio" id="fielding" name="fielding" value="Average" />Average
+		<input type="radio" id="fielding" name="fielding" value="Not Bad" />Not Bad
+		<input type="radio" id="fielding" name="fielding" value="Poor" />Poor
+		<br>
+		Attitude 
+		<input type="radio" id="attitude" name="attitude" value="Excellent" />Excellent
+		<input type="radio" id="attitude" name="attitude" value="Good" />Good
+		<input type="radio" id="attitude" name="attitude" value="Average" />Average
+		<input type="radio" id="attitude" name="attitude" value="Not Bad" />Not Bad
+		<input type="radio" id="attitude" name="attitude" value="Poor" />Poor
+		<br>
+		Rating <input type="text" name="rating" />
+		<br>
+		Comments<textarea id="comments" name="comments"></textarea>
+		<br>
+		<input type="submit" name="submit" value="Submit" />
+	</body>
+</html>

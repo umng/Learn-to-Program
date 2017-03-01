@@ -1,0 +1,23 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class PlayerDAO {
+
+	
+	public Player validateLogin(String username,String password) throws SQLException, ClassNotFoundException {
+		
+		Connection con = DBConnection.getConnection();
+		
+		Statement s = con.createStatement();
+		
+		ResultSet rs = s.executeQuery("select * from player where username='" + username + "' and password='" + password + "'");
+		
+		if(rs.next()) {
+			return new Player();
+		}
+	}
+}
+
+

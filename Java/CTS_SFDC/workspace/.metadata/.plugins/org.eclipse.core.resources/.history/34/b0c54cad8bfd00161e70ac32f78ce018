@@ -1,0 +1,12 @@
+
+
+
+public class PlayerDAO {
+
+	
+	public Player validateLogin(String username,String password) throws SQLException, ClassNotFoundException {
+		//fill the code
+	}
+}
+
+

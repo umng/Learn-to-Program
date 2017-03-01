@@ -1,9 +1,0 @@
-interface Test{ int p = 10; //line 1 
-public int q = 20; //line 2 
-public static int r = 30; //line 3 
-public static final int s = 40; //line 4 
-}
-
-public class Main { public static void main(String args[]) {
-}
-}

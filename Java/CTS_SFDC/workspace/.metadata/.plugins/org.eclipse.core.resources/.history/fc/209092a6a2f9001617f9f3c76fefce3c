@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<form action="Welcome" method="GET">
+			Name<input type=text name=name>
+			<br>
+			<input type=submit name=submit>
+		</form>
+	</body>
+</html>
+        }
+        out.println("</body>");
+        out.println("</html>");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse res)
+    throws IOException, ServletException
+    {
+        doGet(request, response);
+    }
+}

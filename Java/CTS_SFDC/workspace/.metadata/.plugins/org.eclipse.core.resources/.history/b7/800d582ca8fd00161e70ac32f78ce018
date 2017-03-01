@@ -1,0 +1,6 @@
+<html><body>
+<a href='./ProfileServlet?name="+request.getParameter("name")+"' id='profile'>My Profile</a>
+<a href='./SalaryServlet?name="+request.getParameter("name")+"' id='salary'>Salary Details</a>
+<a href='./LogoutServlet' id=logout>Logout</a><br>
+<hr>
+</body></html>
