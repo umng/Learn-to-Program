@@ -1,0 +1,33 @@
+package gameDetail;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class VenueDAO {
+	public String[] getAllVenues() {
+		
+		Connection con = DBConnection.getConnection();
+        
+        Statement statement = con.createStatement();
+        
+        String sql = "select * from venue";
+        
+        ResultSet result = statement.executeQuery(sql);
+        
+        while(result.next()) {
+      	  
+        }
+
+		String[] venues = new String[5];
+		venues[0] = ("<option>Feroz Shah Kotla</option>");
+		venues[1] = ("<option>MA Chidambaram Stadium</option>");
+		venues[2] = ("<option>Punjab Cricket Association Stadium</option>");
+		venues[3] = ("<option>M.Chinnaswamy Stadium</option>");
+		venues[4] = ("<option>Rajiv Gandhi International Stadium</option>");
+		
+		return venues;
+	}
+}
+

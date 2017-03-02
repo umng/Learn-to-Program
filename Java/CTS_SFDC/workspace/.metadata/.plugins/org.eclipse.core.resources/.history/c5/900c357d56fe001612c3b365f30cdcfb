@@ -1,0 +1,27 @@
+<%@page import="team.City"%>
+<%@page import="team.CityBO"%>
+<%@page import="team.Team"%>
+<%@page import="team.TeamBO"%>
+<%@page import="java.util.List"%>
+<%
+	List<Team> teams = new TeamBO().obtainAllTeams();
+%>
+
+<html>
+	<body>
+		<h2>Existing Teams</h2>
+		<br>
+		<table id="teams">
+			<tr>
+				<td>Team</td>
+				<td>Coach</td>
+				<td></td>
+			</tr>
+			<%
+				for(Team t: teams) {
+					out.print("<tr><td>" + t.getName() + "</td><td>" + t.getCoach() + "</td><td><a href='Delete?id=" + t.getId() + ">Delete</a></td></tr>");
+				}
+			%>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+
+<html>
+<head>
+<title>Winning Team Details</title>
+</head>
+<body>
+	<h3>Winning Team Details</h3>
+	<table id="teams">
+		<tr>
+			<th>Team Name</th>
+			<th>Winning Count</th>
+		</tr>
+	</table>
+</body>
+</html>

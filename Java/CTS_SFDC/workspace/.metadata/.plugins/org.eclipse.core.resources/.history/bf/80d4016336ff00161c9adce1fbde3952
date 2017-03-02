@@ -1,0 +1,13 @@
+package ipl;
+
+import java.util.Map;
+
+public class TeamDAO {
+
+    public Map<String,Integer> obtainAllTeams() throws ClassNotFoundException, SQLException {
+        
+    	return new Map>();
+      
+    }    
+}
+

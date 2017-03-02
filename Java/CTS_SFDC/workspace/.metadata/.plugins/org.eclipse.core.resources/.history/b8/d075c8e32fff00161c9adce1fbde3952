@@ -1,0 +1,14 @@
+package gameDetail;
+
+import java.sql.SQLException;
+
+public class VenueBO {
+	public String[] getAllVenues() throws ClassNotFoundException, SQLException {
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e){	}
+		
+		return new VenueDAO().getAllVenues();
+	}
+}
+

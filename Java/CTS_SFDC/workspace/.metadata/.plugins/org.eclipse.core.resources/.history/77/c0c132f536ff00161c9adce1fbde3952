@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<title>Winning Team Details</title>
+</head>
+<body>
+	<h3>Winning Team Details</h3>
+	<table id="teams">
+		<tr>
+			<th>Team Name</th>
+			<th>Winning Count</th>
+		</tr>
+		<tr>
+			<th>Kings XI Punjab</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<th>Delhi Daredevils</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<th>Gujarat Lions</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Mumbai Indians</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Rising Pune Supergiants</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Sunrisers Hyderabad</th>
+			<th>1</th>
+		</tr>
+		<tr>
+			<th>Royal Challengers Bangalore</th>
+			<th>2</th>
+		</tr>
+		<tr>
+			<th>Kolkata Knight Riders</th>
+			<th></th>
+		</tr>
+	</table>
+</body>
+</html>

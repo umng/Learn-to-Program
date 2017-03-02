@@ -1,0 +1,23 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%
+	List<String> venues = new ArrayList<>();
+	venues.add("<option>Feroz Shah Kotla</option>");
+	venues.add("<option>MA Chidambaram Stadium</option>");
+	venues.add("<option>Punjab Cricket Association Stadium</option>");
+	venues.add("<option>M.Chinnaswamy Stadium</option>");
+	venues.add("<option>Rajiv Gandhi International Stadium</option>	");
+%>
+<html>
+	<body>
+		<h2>Get Game Details By Venue</h2>
+		<form method="get" action="DisplayServlet">
+			Select Venue
+			<select name="venue" id="venue">
+			<% %>		
+			</select>
+			<br>
+			<input type="submit" id="detail"/>
+		</form>
+	</body>
+</html>

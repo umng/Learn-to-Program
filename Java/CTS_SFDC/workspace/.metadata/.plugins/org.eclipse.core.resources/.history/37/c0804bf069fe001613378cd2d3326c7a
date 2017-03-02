@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<div id="gameDetail">
+			<h2>Game Details</h2>
+			<table>
+				<tr>
+					<th>Date</th>
+					<th>Team A</th>
+					<th>Team B</th>
+				</tr>
+				<tr>
+					<td>2015-02-10</td>
+					<td>Gujarat Lions</td>
+					<td>Rising Pune Supergiants</td>
+				</tr>
+				<tr>
+					<td>2016-06-11</td>
+					<td>Team A</td>
+					<td>Team B</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

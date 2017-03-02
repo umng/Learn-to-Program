@@ -1,0 +1,15 @@
+package gameDetail;
+
+
+
+
+public class VenueBO {
+	public String[] getAllVenues() {
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e){	}
+		
+		return new VenueDAO().getAllVenues();
+	}
+}
+

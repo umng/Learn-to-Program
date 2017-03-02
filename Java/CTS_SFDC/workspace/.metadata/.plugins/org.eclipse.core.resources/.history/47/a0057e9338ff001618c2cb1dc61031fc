@@ -1,0 +1,91 @@
+drop table if exists outcome;
+drop table if exists team;
+
+	  create table team(
+		id int not null,
+		name varchar(100) not null,
+		coach varchar(100) not null,
+		
+		primary key(id)
+		);
+     
+    create table outcome(
+		id int not null,
+		status varchar(100) not null,
+		winner_team_id int,
+		
+		primary key(id),
+		foreign key(winner_team_id)
+		references team(id));	
+
+	
+insert into team(id,name,coach) values (1,'Delhi Daredevils','Paddy Upton');
+insert into team(id,name,coach) values (2,'Gujarat Lions','Brad Hodge');
+insert into team(id,name,coach) values (3,'Kings XI Punjab','Sanjay Bangar');
+insert into team(id,name,coach) values (4,'Mumbai Indians','Ricky Ponting');
+insert into team(id,name,coach) values (5,'Rising Pune Supergiants','Stephen Fleming');
+insert into team(id,name,coach) values (6,'Sunrisers Hyderabad','Tom Moody');
+insert into team(id,name,coach) values (7,'Royal Challengers Bangalore','Daniel Vettori');
+insert into team(id,name,coach) values (8,'Kolkata Knight Riders','Jacques Kallis');
+
+
+ insert into outcome(id,status,winner_team_id)
+ values (1,'Win',1);
+ insert into outcome(id,status,winner_team_id)
+ values (2,'Win',1);
+
+ insert into outcome(id,status,winner_team_id)
+ values (3,'Win',2);
+ insert into outcome(id,status,winner_team_id)
+ values (4,'Win',2);
+
+ insert into outcome(id,status,winner_team_id)
+ values (5,'Win',3);
+ insert into outcome(id,status,winner_team_id)
+ values (6,'Win',3);
+
+ insert into outcome(id,status,winner_team_id)
+ values (7,'Win',4);
+ insert into outcome(id,status,winner_team_id)
+ values (8,'Win',2);
+
+ insert into outcome(id,status,winner_team_id)
+ values (9,'Win',5);
+ insert into outcome(id,status,winner_team_id)
+ values (10,'Win',5);
+
+ insert into outcome(id,status,winner_team_id)
+ values (11,'Win',4);
+ insert into outcome(id,status,winner_team_id)
+ values (12,'Win',6);
+
+ insert into outcome(id,status,winner_team_id)
+ values (13,'Win',5);
+ insert into outcome(id,status,winner_team_id)
+ values (14,'Win',7);
+
+ insert into outcome(id,status,winner_team_id)
+ values (15,'Win',2);
+ insert into outcome(id,status,winner_team_id)
+ values (16,'Win',8);
+
+ insert into outcome(id,status,winner_team_id)
+ values (17,'Win',1);
+ insert into outcome(id,status,winner_team_id)
+ values (18,'Win',3);
+
+ insert into outcome(id,status,winner_team_id)
+ values (19,'Win',5);
+ insert into outcome(id,status,winner_team_id)
+ values (20,'Win',7);
+	 
+	
+		
+		
+		
+
+
+	
+	
+
+

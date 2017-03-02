@@ -1,0 +1,12 @@
+package ipl;
+
+public class Team {
+
+    private int count;
+    private String name;
+    
+   
+	//fill the code
+
+}
+

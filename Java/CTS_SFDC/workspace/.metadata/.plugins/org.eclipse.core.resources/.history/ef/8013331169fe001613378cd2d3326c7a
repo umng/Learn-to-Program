@@ -1,0 +1,11 @@
+<html>
+	<body>
+		<h2>Get Game Details By Venue</h2>
+		Select Venue
+		<select name="venue">
+			<option></option>
+		</select>
+		<br>
+		<input type="submit" id="detail"/>
+	</body>
+</html>

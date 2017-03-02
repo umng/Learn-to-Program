@@ -1,0 +1,9 @@
+package ipl;
+
+public class TeamBO {
+    public Map<String,Integer> obtainAllTeams() throws ClassNotFoundException, SQLException{
+    	
+    	return new TeamDAO().obtainAllTeams();
+
+    }    
+}

@@ -1,0 +1,11 @@
+package gameDetail;
+
+
+
+
+public class VenueBO {
+	public String[] getAllVenues() {
+		
+	}
+}
+

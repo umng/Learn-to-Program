@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<div id="gameDetail">
+			<h2>Game Details</h2>
+			<table>
+				<tr>
+					<td>Date</td>
+					<td>Team A</td>
+					<td>Team B</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

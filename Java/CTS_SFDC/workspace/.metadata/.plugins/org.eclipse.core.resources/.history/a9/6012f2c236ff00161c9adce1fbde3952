@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<title>Winning Team Details</title>
+</head>
+<body>
+	<h3>Winning Team Details</h3>
+	<table id="teams">
+		<tr>
+			<th>Team Name</th>
+			<th>Winning Count</th>
+		</tr>
+		<tr>
+			<th>Delhi Daredevils</th>
+			<th></th>
+		</tr>
+	</table>
+</body>
+</html>
+
+','');
+insert into team(id,name,coach) values (2,'Gujarat Lions','Brad Hodge');
+insert into team(id,name,coach) values (3,'Kings XI Punjab','Sanjay Bangar');
+insert into team(id,name,coach) values (4,'Mumbai Indians','Ricky Ponting');
+insert into team(id,name,coach) values (5,'Rising Pune Supergiants','Stephen Fleming');
+insert into team(id,name,coach) values (6,'Sunrisers Hyderabad','Tom Moody');
+insert into team(id,name,coach) values (7,'Royal Challengers Bangalore','Daniel Vettori');
+insert into team(id,name,coach) values (8,'Kolkata Knight Riders','Jacques Kallis');

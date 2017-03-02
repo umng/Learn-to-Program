@@ -1,0 +1,57 @@
+package team;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TeamDAO{
+
+    public List<Team> obtainAllTeams() throws ClassNotFoundException, SQLException {
+    	
+    	Connection con = DBConnection.getConnection();
+    	
+    	Statement statement = con.createStatement();
+    	
+    	String sql = "select * from team order by name";
+    	
+    	ResultSet result = statement.executeQuery(sql);
+    	
+    	List<Team> teams = new ArrayList<>();
+    	
+    	int i = 0;
+    	while(result.next()) {
+    		teams.add(new Team(result.getString("name"), result.getString("coach")));
+    	}
+    	
+    	return teams;
+    }
+    
+    public Integer deleteTeamById(Integer id) throws SQLException, ClassNotFoundException {
+    	
+    	Connection con = DBConnection.getConnection();
+    	
+    	Statement statement = con.createStatement();
+    	
+    	String sql = "delete from team where id=" + id;
+    	
+    	return statement.executeUpdate(sql);
+	}
+	
+
+
+    
+    
+    
+    
+    
+    
+	
+		
+	}
+    
+    
+
+
